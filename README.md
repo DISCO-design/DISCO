@@ -241,12 +241,6 @@ To reproduce the paper's nucleic acid results, use `experiment=diverse`.
 
 ## 🕺 Studio-179: A Ligand Benchmark for Generative Protein Design 💃
 
-<!-- TODO: Add a results figure here (e.g., Studio-179 co-designability results or example structures)
-<p align="center">
-  <img src="assets/studio179_results.png" width="85%" alt="Studio-179 benchmark results" />
-</p>
--->
-
 To systematically evaluate ligand-conditioned protein design, we curated **Studio-179**: a benchmark of 170 natural and non-natural ligands — plus 9 multi-ligand combinations — spanning catalysis, pharmaceuticals, luminescence, and sensing.
 
 The library covers a range of chemical and geometric properties relevant to protein-ligand interactions:
