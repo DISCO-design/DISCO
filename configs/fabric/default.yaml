@@ -1,0 +1,3 @@
+# @package _global_
+fabric:
+  num_nodes: 1

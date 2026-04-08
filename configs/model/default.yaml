@@ -1,0 +1,97 @@
+# @package _global_
+n_blocks: 8
+diffusion_batch_size: 12
+lm_name: dplm_650M
+freeze_lm: True
+c_s: 384
+c_z: 128
+c_s_inputs: 451 # c_s_inputs == c_token + 33 + 33 + 1
+c_atom: 128
+c_atompair: 16
+c_token: 384
+no_bins: 64
+sigma_data: 16.0
+should_structure_encode_x0: true
+should_seq_struct_encode_after_pairformer: true
+structure_encoder_use_x0_input: true
+diffusion_chunk_size: 4 # chunksize of diffusion_batch_size
+blocks_per_ckpt: 1 # Number of blocks in each activation checkpoint, if None, no checkpointing
+use_memory_efficient_kernel: false
+use_deepspeed_evo_attention: true
+use_lma: false
+dtype: "bf16"
+skip_amp:
+  sample_diffusion: true
+infer_setting:
+  chunk_size: null
+  sample_diffusion_chunk_size: null
+inference_noise_scheduler:
+  s_max: 160.0
+  s_min: 4e-4
+  rho: 7
+  sigma_data: 16.0 # in EDM, this is 1.0
+  t_start: 0.0
+recycling_distance_calculator:
+  dist_bin_min: 2.0
+  dist_bin_max: 12.0
+  num_bins: 20
+sample_diffusion:
+  gamma0: 0.8
+  gamma_min: 1.0
+  noise_scale_lambda: 1.003
+  step_scale_eta: 1.5
+  N_step: 200
+  integrator: "euler"              # "euler" or "heun" (2nd-order, 2x NFE per step)
+  gamma_anneal: "none"             # "none", "linear", or "cosine" — anneals gamma over denoising trajectory
+model:
+  N_cycle: 4
+  use_joint_diffusion_module: false
+  input_embedder:
+    c_atom: ${c_atom}
+    c_atompair: ${c_atompair}
+    c_token: ${c_token}
+  relative_position_encoding:
+    r_max: 32
+    s_max: 2
+    c_z: ${c_z}
+  pairformer:
+    n_blocks: ${n_blocks}
+    c_z: ${c_z}
+    c_s: ${c_s}
+    n_heads: 16
+    dropout: 0.25
+    blocks_per_ckpt: ${blocks_per_ckpt}
+  diffusion_module:
+    use_fine_grained_checkpoint: true
+    do_fourier_embed_seq: true
+    do_lm_skip_connection: true
+    sigma_data: ${sigma_data}
+    c_token: 768
+    c_atom: ${c_atom}
+    c_atompair: ${c_atompair}
+    c_z: ${c_z}
+    c_s: ${c_s}
+    c_s_inputs: ${c_s_inputs}
+    initialization:
+      zero_init_condition_transition: false
+      zero_init_atom_encoder_residual_linear: false
+      he_normal_init_atom_encoder_small_mlp: false
+      he_normal_init_atom_encoder_output: false
+      glorot_init_self_attention: false
+      zero_init_adaln: true
+      zero_init_residual_condition_transition: false
+      zero_init_dit_output: true
+      zero_init_atom_decoder_linear: false
+    atom_encoder:
+      n_blocks: 3
+      n_heads: 4
+    transformer:
+      n_blocks: 24
+      n_heads: 16
+    atom_decoder:
+      n_blocks: 3
+      n_heads: 4
+    blocks_per_ckpt: ${blocks_per_ckpt}
+  distogram_head:
+    c_z: ${c_z}
+    no_bins: ${no_bins}

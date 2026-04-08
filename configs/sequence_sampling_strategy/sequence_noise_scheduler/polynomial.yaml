@@ -1,0 +1,2 @@
+_target_: disco.model.cogen_inference.sequence_inference_noise_scheduler.PolynomialSequenceInferenceNoiseScheduler
+power: 1.0

@@ -1,0 +1,33 @@
+# @package _global_
+defaults:
+  - override /sequence_sampling_strategy: path_planning
+
+sequence_sampling_strategy:
+  score_type: random
+  logits_temp: 0.8
+  entropy_adaptive_temp: true
+  entropy_adaptive_beta: 1.0
+  switch_temp: true
+  sequence_noise_scheduler:
+    power: 1.0
+
+sample_diffusion:
+  N_step: 200
+  noise_scale_lambda: 0.1
+  noisy_guidance:
+    enabled: true
+    guid_struct: true
+    omega_struct: 1.5
+    rescale_phi: 0.7
+    uncond_seq_time: 0.6
+    guide_seq: true
+    omega_seq: 2.0
+    uncond_struct_time: 0.8
+    guidance_start_frac: 0.3
+    guidance_end_frac: 0.8
+
+model:
+  N_cycle: 4
+
+inference_noise_scheduler:
+  rho: 7.0

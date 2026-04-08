@@ -1,0 +1,30 @@
+# @package _global_
+#
+# specify here default training configuration
+defaults:
+  - task_manager: default
+  - paths: default
+  - model: default
+  - logger: many_loggers
+  - fabric: default
+  - inference: default
+  - structure_encoder: default
+  - sequence_sampling_strategy: default
+  - experiment: null
+  - effort: fast
+  - _self_
+
+load_checkpoint_path: null
+load_strict: true
+deterministic: false
+bb_only: true
+input_json_path: examples/unconditional_foldflow_config.json
+
+# Originally in data config
+use_fabric: True
+inference_random_transform_ref_pos: true
+inference_random_transform_msk_res: ${task_manager.transform_masked_ref_pos}
+inference_ref_pos_augment: ${task_manager.ref_pos_augment}
+inference_loop_strategy_name: BasicInferenceLoopStrategy
+
+eval_version: unconditional

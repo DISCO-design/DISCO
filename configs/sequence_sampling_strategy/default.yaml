@@ -1,0 +1,5 @@
+defaults:
+  - _self_
+  - sequence_noise_scheduler: polynomial
+_target_: disco.model.cogen_inference.sequence_sampling_strategy.VanillaMDLMSamplingStrategy
+logits_temp: 1.0

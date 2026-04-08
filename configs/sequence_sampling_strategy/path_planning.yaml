@@ -1,0 +1,17 @@
+defaults:
+  - _self_
+  - sequence_noise_scheduler: polynomial
+
+_target_: disco.model.cogen_inference.sequence_sampling_strategy.PathPlanningSamplingStrategy
+score_type: "random"
+logits_temp: 0.8
+score_temp: 1.0
+mask_stochasticity_strength: 1.0
+planner_name: null
+should_ensure_unmasked_stay: false
+allow_remasking: true
+
+# Entropy-adaptive per-position temperature
+entropy_adaptive_temp: false # if true, scale temperature per-position by inverse entropy
+entropy_adaptive_beta: 1.0 # strength: 0=disabled, higher=more aggressive. Confident positions get temp * (1 + beta)
+entropy_adaptive_anneal_power: 0.0 # 0=constant (backward compat), 1=linear, 2=quadratic annealing over t_next

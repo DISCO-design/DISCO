@@ -1,0 +1,12 @@
+# @package _global_
+#
+seeds:
+  - 101
+  - 102
+
+dump_dir: ./output
+need_atom_confidence: False
+input_json_path: null
+load_checkpoint_path: null
+num_workers: 0
+bb_only: true

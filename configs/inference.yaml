@@ -1,0 +1,17 @@
+# @package _global_
+#
+defaults:
+  - base
+  - override inference: default
+  - _self_
+
+# during inference
+deterministic: true
+inference_random_transform_ref_pos: true
+inference_random_transform_msk_res: true
+inference_ref_pos_augment: true
+infer_batch_size: 1
+n_seq_duplicates_per_structure: 1
+shuffle_dataloader: ${gt:${fabric.num_nodes},1}
+output_format: unconditional_monomer_protein
+num_inference_seeds: null

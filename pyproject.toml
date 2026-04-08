@@ -1,0 +1,175 @@
+[project]
+name = "DISCO"
+version = "1.0.0"
+description = "Diffusion for Sequence-Structure Co-design: a multimodal generative model that jointly co-designs protein sequences and 3D structures conditioned on arbitrary biomolecules"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "accelerate>=1.12.0",
+    "biopython==1.83",
+    "biotite==1.4.0",
+    "deepspeed>=0.18.3",
+    "dm-tree>=0.1.8",
+    "evaluate>=0.4.6",
+    "fair-esm>=2.0.0",
+    "fasteners>=0.20",
+    "freesasa==2.2.1",
+    "gemmi>=0.6.7",
+    "hydra-core>=1.3.2",
+    "icecream>=2.1.8",
+    "ipdb>=0.13.13",
+    "lightning>=2.6.0",
+    "ml-collections>=1.1.0",
+    "modelcif>=1.6",
+    "multimolecule>=0.0.8",
+    "ninja>=1.13.0",
+    "numpy<2",
+    "pandas>=2.3.3",
+    "pdbeccdutils>=1.0.0",
+    "pre-commit>=4.5.1",
+    "prody>=2.6.1",
+    "py3dmol>=2.5.3",
+    "pyrootutils>=1.0.4",
+    "rich>=14.2.0",
+    "rootutils>=1.0.7",
+    "scikit-learn>=1.8.0",
+    "scipy>=1.16.3",
+    "seaborn>=0.13.2",
+    "sentencepiece>=0.2.1",
+    "torch>=2.5",
+    "torchdata>=0.11.0",
+    "torchinfo>=1.8.0",
+    "tos>=2.8.7",
+    "tqdm>=4.67.1",
+    "transformers>=4.50.0",
+    "wandb>=0.23.1",
+    "openfold",
+    "LigandMPNN",
+    "runner",
+]
+[tool.uv.workspace]
+members = ["packages/LigandMPNN", "packages/openfold", "config", "runner"]
+exclude = ["packages/TMscore"]
+
+[tool.uv.sources]
+openfold = { workspace = true }
+LigandMPNN = { workspace = true }
+configs = { workspace = true }
+runner = { workspace = true }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["disco"]
+
+[tool.pytest.ini_options]
+addopts = [
+  "--color=yes",
+  "--durations=0",
+  "--strict-markers",
+  "--doctest-modules",
+]
+filterwarnings = [
+  "ignore::DeprecationWarning",
+  "ignore::UserWarning",
+]
+log_cli = "True"
+markers = [
+  "slow: slow tests",
+]
+minversion = "6.0"
+testpaths = "tests/"
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: nocover",
+    "raise NotImplementedError",
+    "raise NotImplementedError()",
+    "if __name__ == .__main__.:",
+]
+# ----------------------------------------
+# Ruff configuration
+# ----------------------------------------
+[tool.ruff]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+    "outputs/",
+    "packages/",
+]
+
+line-length = 99
+indent-width = 4
+
+target-version = "py311"
+
+# ----------------------------------------
+# Linting configuration
+# ----------------------------------------
+[tool.ruff.lint]
+select = [
+    "E",      # pycodestyle errors
+    "F",      # pyflakes
+    "W",      # pycodestyle warnings
+    "B",      # flake8-bugbear
+    "I",      # isort
+    "UP",     # pyupgrade
+    "N",      # pep8-naming
+    "S",      # bandit (security)
+    "COM",    # flake8-commas
+    "ISC",    # implicit string concatenation
+    "PT",     # pytest style
+    "PTH",    # pathlib usage
+    "T10",    # debugger detection
+]
+
+ignore = [
+    "E203",   # whitespace before ':'
+    "E731",   # lambda assignment
+    "S101",   # use of assert
+    "COM812", # trailing comma - conflicts with ruff formatter
+]
+
+fixable = ["ALL"]
+unfixable = []
+
+dummy-variable-rgx = "^(_.*|[ijk])$"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S"]
+
+# ----------------------------------------
+# Formatting (Black-compatible)
+# ----------------------------------------
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"

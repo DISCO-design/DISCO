@@ -1,0 +1,715 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_50"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "---------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_51"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_52"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "-----------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_53"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_54"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "-------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_55"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_56"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "---------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_57"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_58"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "-----------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_59"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_60"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "-------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_61"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_62"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "---------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_63"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_64"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "-----------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_65"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_66"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "-------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_67"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_68"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "---------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_69"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_70"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "-----------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_71"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_72"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "-------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_73"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_74"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "---------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_75"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_76"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "-----------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_77"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_78"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "-------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_79"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "TTTGCACCAA",
+          "count": 1
+        }
+      },
+      {
+        "dnaSequence": {
+          "sequence": "GTAATTGCGG",
+          "count": 1
+        }
+      }
+    ],
+    "name": "7S03_len_80"
+  }
+]

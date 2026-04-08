@@ -1,0 +1,3 @@
+_target_: disco.data.task_manager.TaskManager
+transform_masked_ref_pos: true
+ref_pos_augment: true

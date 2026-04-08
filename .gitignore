@@ -1,0 +1,117 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# uv
+# Uncomment if you don't want to lock dependencies:
+uv.lock
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Hydra outputs
+outputs/
+multirun/
+
+# Wandb
+wandb/
+
+# Slurm
+slurm-*.out
+
+# Model checkpoints / weights
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+
+# Logs
+*.log
+logs/
+output/
+
+# Watch folder (runtime artifacts)
+watch_folder/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Ruff
+.ruff_cache/
+
+# pytype
+.pytype/
+
+# Pyre
+.pyre/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Layer norm build artifacts
+disco/model/layer_norm/.ninja_deps
+disco/model/layer_norm/.ninja_log
+disco/model/layer_norm/build.ninja
+disco/model/layer_norm/layer_norm_cuda.o
+disco/model/layer_norm/layer_norm_cuda_kernel.cuda.o

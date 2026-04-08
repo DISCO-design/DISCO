@@ -1,0 +1,10 @@
+use_structure_encoder: true
+args:
+  _target_: disco.model.modules.lmpnn.LigandMPNN
+  ca_only: False
+  arg_pack_side_chains: False
+  set_eval: False
+  k_neighbors: 48
+  device: "cuda"
+  batch_size: 4
+  embed_diffusion_time: false

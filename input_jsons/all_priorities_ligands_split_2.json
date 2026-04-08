@@ -1,0 +1,2468 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/octamethylcyclotetrasiloxane_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_octamethylcyclotetrasiloxane"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/musk_xylene_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_musk_xylene"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/dichlorodiphenylsulfone_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_dichlorodiphenylsulfone"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/fullerene_final_0.sdf",
+          "count": 2
+        }
+      }
+    ],
+    "name": "length_150_fullerene*2"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/fullerene_final_0.sdf",
+          "count": 3
+        }
+      }
+    ],
+    "name": "length_150_fullerene*3"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/PFOA_final_0.sdf",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/PFOS_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_PFOA+PFOS"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/PFOS_final_0.sdf",
+          "count": 2
+        }
+      }
+    ],
+    "name": "length_200_PFOS*2"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/PFOS_final_0.sdf",
+          "count": 3
+        }
+      }
+    ],
+    "name": "length_200_PFOS*3"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/NAP_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_NAP"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/tetrahydrobiopterin_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_tetrahydrobiopterin"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/Ru(bpy)_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_Ru(bpy)"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/iridium-piano_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_iridium-piano"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/Ru(tap)2(dppz)_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_Ru(tap)2(dppz)"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/iridium-biotin_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_iridium-biotin"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/ubiquinone-1_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_ubiquinone-1"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/testosterone_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_testosterone"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/cortisol_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_cortisol"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/aldosterone_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_aldosterone"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/lactic_acid_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_lactic_acid"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/sinefunguin_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_sinefunguin"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/hydroxycinnamic_acid_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_hydroxycinnamic_acid"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/paromomycin_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_paromomycin"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/taxol_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_taxol"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/D-Phe-Pro-Arg-CH2Cl_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_D-Phe-Pro-Arg-CH2Cl"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/trihydroxycyclohexene_COOH_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_trihydroxycyclohexene_COOH"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/fullerene_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_fullerene"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/eosin_Y_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_eosin_Y"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/coumarin_343_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_coumarin_343"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/ideal/Fe_ideal.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_Fe"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/ideal/Co_ideal.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_Co"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/ideal/Pb_ideal.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_Pb"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/ideal/Hg_ideal.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_Hg"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/PFOS_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_PFOS"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/PFOA_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_PFOA"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/hexachlorobiphenyl_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_hexachlorobiphenyl"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/phenol_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_phenol"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/resveratrol_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_resveratrol"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/trichloroanisole_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_trichloroanisole"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/iohexol_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_iohexol"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/hexabromodiphenyl_ether_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_hexabromodiphenyl_ether"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/DEHP_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_DEHP"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/octamethylcyclotetrasiloxane_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_octamethylcyclotetrasiloxane"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/musk_xylene_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_musk_xylene"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/dichlorodiphenylsulfone_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_dichlorodiphenylsulfone"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/fullerene_final_0.sdf",
+          "count": 2
+        }
+      }
+    ],
+    "name": "length_200_fullerene*2"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/fullerene_final_0.sdf",
+          "count": 3
+        }
+      }
+    ],
+    "name": "length_200_fullerene*3"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/PFOA_final_0.sdf",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/PFOS_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_200_PFOA+PFOS"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/PFOS_final_0.sdf",
+          "count": 2
+        }
+      }
+    ],
+    "name": "length_250_PFOS*2"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/PFOS_final_0.sdf",
+          "count": 3
+        }
+      }
+    ],
+    "name": "length_250_PFOS*3"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/NAP_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_NAP"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/tetrahydrobiopterin_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_tetrahydrobiopterin"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/Ru(bpy)_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_Ru(bpy)"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/iridium-piano_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_iridium-piano"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/Ru(tap)2(dppz)_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_Ru(tap)2(dppz)"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/iridium-biotin_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_iridium-biotin"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/ubiquinone-1_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_ubiquinone-1"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/testosterone_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_testosterone"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/cortisol_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_cortisol"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/aldosterone_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_aldosterone"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/lactic_acid_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_lactic_acid"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/sinefunguin_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_sinefunguin"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/hydroxycinnamic_acid_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_hydroxycinnamic_acid"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/paromomycin_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_paromomycin"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/taxol_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_taxol"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/D-Phe-Pro-Arg-CH2Cl_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_D-Phe-Pro-Arg-CH2Cl"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/trihydroxycyclohexene_COOH_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_trihydroxycyclohexene_COOH"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/fullerene_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_fullerene"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/eosin_Y_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_eosin_Y"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/coumarin_343_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_coumarin_343"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/ideal/Fe_ideal.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_Fe"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/ideal/Co_ideal.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_Co"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/ideal/Pb_ideal.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_Pb"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/ideal/Hg_ideal.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_Hg"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/PFOS_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_PFOS"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/PFOA_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_PFOA"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/hexachlorobiphenyl_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_hexachlorobiphenyl"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/phenol_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_phenol"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/resveratrol_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_resveratrol"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/trichloroanisole_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_trichloroanisole"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/iohexol_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_iohexol"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/hexabromodiphenyl_ether_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_hexabromodiphenyl_ether"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/DEHP_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_DEHP"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/octamethylcyclotetrasiloxane_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_octamethylcyclotetrasiloxane"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/musk_xylene_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_musk_xylene"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/dichlorodiphenylsulfone_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_dichlorodiphenylsulfone"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/fullerene_final_0.sdf",
+          "count": 2
+        }
+      }
+    ],
+    "name": "length_250_fullerene*2"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/fullerene_final_0.sdf",
+          "count": 3
+        }
+      }
+    ],
+    "name": "length_250_fullerene*3"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/PFOA_final_0.sdf",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_2/xtb/PFOS_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_250_PFOA+PFOS"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/guanosine-diphosphate_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_guanosine-diphosphate"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/adenosine_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_adenosine"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/cytidine-triphosphate_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_cytidine-triphosphate"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/bacteriopheophytin_a_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_bacteriopheophytin_a"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/vitamin_B9_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_vitamin_B9"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/thymidine-diphosphate_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_thymidine-diphosphate"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/d-myo-inositol-triphosphate_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_d-myo-inositol-triphosphate"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/siroheme_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_siroheme"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/cyclic_guanosine_monophosphate_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_cyclic_guanosine_monophosphate"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/ascorbic_acid_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_ascorbic_acid"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/flavin_adenine_dinucleotide_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_flavin_adenine_dinucleotide"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/riboflavin_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_riboflavin"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/thiamine_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_thiamine"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/vitamin_K3_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_vitamin_K3"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/chlorophyll_b_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_chlorophyll_b"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/acenaphtanone_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_acenaphtanone"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/4CzIPN_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_4CzIPN"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/NHC_imidazolium_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_NHC_imidazolium"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/NHC_thiazolium_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_NHC_thiazolium"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/NHC_triazolium_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_NHC_triazolium"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/thioxanthone_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_thioxanthone"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/dimethoxythioxanthone_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_dimethoxythioxanthone"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/mesityl-methylacridinium_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_mesityl-methylacridinium"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/mabiq_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_mabiq"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/staurosporine_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_staurosporine"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/sulfo(sulfoamino)glucopyranose_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_sulfo(sulfoamino)glucopyranose"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/azaxanthine_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_azaxanthine"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/darunavir_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_darunavir"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/nicotinamide_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_nicotinamide"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/salicylic_acid_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_salicylic_acid"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/chapso_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_chapso"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/molybdopterin_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_molybdopterin"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/PF07321332_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_PF07321332"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/propargyldideazafolic_acid_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_propargyldideazafolic_acid"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/abscisic_acid_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_abscisic_acid"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/pentahydroxyflavone_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_pentahydroxyflavone"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/beta-carotene_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_beta-carotene"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/coelenterazine_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_coelenterazine"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/luciferin_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_luciferin"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/coumarin_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_coumarin"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/DIID_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_DIID"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/indigo_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_indigo"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/isoindigo_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_isoindigo"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/quinacridone_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_quinacridone"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/ideal/Fe3-S4_ideal.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_Fe3-S4"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/dihydroxypropyl_octadecenoate_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_dihydroxypropyl_octadecenoate"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/tetrodotoxin_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_tetrodotoxin"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/carbamazepine_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_carbamazepine"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/ciprofloxacin_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_ciprofloxacin"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/ferrocene_2COOH_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_ferrocene_2COOH"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/PTM_radical_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_PTM_radical"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/gaba_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_gaba"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/mirex_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_mirex"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/tributyltin_oxide_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_tributyltin_oxide"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/ideal/cisplatin_definition.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_cisplatin"
+  },
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "------------------------------------------------------------------------------------------------------------------------------------------------------",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "FILE_/home/mila/l/liucheng/Repos/Proteinx-private/ligands_benchmark/priority_3/xtb/actinonin_final_0.sdf",
+          "count": 1
+        }
+      }
+    ],
+    "name": "length_150_actinonin"
+  }
+]
