@@ -18,7 +18,7 @@ load_checkpoint_path: null
 load_strict: true
 deterministic: false
 bb_only: true
-input_json_path: examples/unconditional_foldflow_config.json
+input_json_path: input_jsons/unconditional_config.json
 
 # Originally in data config
 use_fabric: True
