@@ -98,7 +98,7 @@ python runner/inference.py \
 | `input_json_path=` | Path to the input JSON file describing what to generate. |
 | `seeds=` | List of random seeds, e.g. `[0,1,2]`. Each seed produces one sample per job in the input JSON, so the total number of generated samples equals `len(seeds) * len(jobs)`. |
 | `num_inference_seeds=` | Alternative to `seeds=`: generates seeds `[0, 1, ..., N-1]`. For example, `num_inference_seeds=100` produces 100 samples per job. |
-| `effort=` | Compute preset: `fast` (default) or `max`. **We only recommend `effort=fast` for unconditional generation; for conditional generation (e.g. ligand- or DNA/RNA-conditioned) use `effort=max`.** See [Trading off quality for speed](#trading-off-quality-for-speed). |
+| `effort=` | Compute preset: `max` (default) or `fast`. **We only recommend `effort=fast` for unconditional generation; for conditional generation (e.g. ligand- or DNA/RNA-conditioned) use `effort=max`.** See [Trading off quality for speed](#trading-off-quality-for-speed). |
 | `dump_dir=` | Output directory for generated structures. Defaults to `./output`. |
 
 ### Experiment presets
