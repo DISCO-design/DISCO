@@ -11,7 +11,7 @@ defaults:
   - structure_encoder: default
   - sequence_sampling_strategy: default
   - experiment: null
-  - effort: fast
+  - effort: max
   - _self_
 
 load_checkpoint_path: null
