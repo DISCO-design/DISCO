@@ -64,7 +64,7 @@ warnings.filterwarnings(
 # Matches per-layer ESM/DPLM rotary inv_freq keys from old checkpoints, e.g.
 # "lm_module.lm_model.model.esm.encoder.layer.23.attention.self.rotary_embeddings.inv_freq".
 _ESM_PER_LAYER_INV_FREQ_RE = re.compile(
-    r"^(?P<prefix>.+\.)encoder\.layer\.(?P<layer>\d+)"
+    r"^(?P<prefix>.+\.esm\.)encoder\.layer\.(?P<layer>\d+)"
     r"\.attention\.self\.rotary_embeddings\.inv_freq$"
 )
 
