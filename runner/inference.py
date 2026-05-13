@@ -18,6 +18,8 @@ import logging
 import os
 import re
 import traceback
+import warnings
+
 from collections import OrderedDict
 from collections.abc import Mapping
 from contextlib import nullcontext
@@ -51,12 +53,25 @@ rootutils.setup_root(__file__, indicator=".project-root")
 
 logger = logging.getLogger(__name__)
 
+warnings.filterwarnings(
+    "ignore",
+    message="Using a non-tuple sequence for multidimensional indexing.*",
+    category=UserWarning,
+    module="openfold.model.triangular_multiplicative_update",
+)
+
 
 # Matches per-layer ESM/DPLM rotary inv_freq keys from old checkpoints, e.g.
 # "lm_module.lm_model.model.esm.encoder.layer.23.attention.self.rotary_embeddings.inv_freq".
 _ESM_PER_LAYER_INV_FREQ_RE = re.compile(
     r"^(?P<prefix>.+\.)encoder\.layer\.(?P<layer>\d+)"
     r"\.attention\.self\.rotary_embeddings\.inv_freq$"
+)
+
+# Matches ESM embedding position_embeddings keys, e.g.
+# "lm_module.lm_model.model.esm.embeddings.position_embeddings.weight".
+_ESM_POSITION_EMBEDDINGS_RE = re.compile(
+    r"^.+\.embeddings\.position_embeddings\.weight$"
 )
 
 
@@ -111,6 +126,37 @@ def _remap_esm_rotary_inv_freq(
         remapped[new_key] = first_inv_freq
         for _, key in layer_keys:
             remapped.pop(key, None)
+
+    return remapped
+
+
+def _fill_unused_esm_position_embeddings(
+    checkpoint_state: Mapping[str, torch.Tensor],
+    current_state: Mapping[str, torch.Tensor],
+) -> "OrderedDict[str, torch.Tensor]":
+    """Fills missing ESM ``position_embeddings.weight`` keys from current state.
+
+    On older transformers versions like 4.50.0 ,
+    ``EsmEmbeddings.position_embeddings`` is unconditionally
+    instantiated as an ``nn.Embedding``, despite the weight being unused when
+    the model is configured with ``position_embedding_type="rotary"``. The
+    original DISCO checkpoint was saved against an even older transformers
+    release where this layer was conditional on the absolute-position branch,
+    so the key is absent from the checkpoint and ``strict=True`` loads fail
+    with a missing-key error.
+
+    The remap is only applied when the checkpoint is missing the key but the
+    current model has one, so it is a no-op for checkpoints that do carry an
+    absolute-position embedding.
+    """
+    remapped: OrderedDict[str, torch.Tensor] = OrderedDict(checkpoint_state)
+
+    for key, tensor in current_state.items():
+        if not _ESM_POSITION_EMBEDDINGS_RE.match(key):
+            continue
+        if key in remapped:
+            continue
+        remapped[key] = tensor.detach().clone()
 
     return remapped
 
@@ -254,6 +300,9 @@ class InferenceRunner:
 
         current = self.model.state_dict()
         checkpoint["model"] = _remap_esm_rotary_inv_freq(checkpoint["model"], current)
+        checkpoint["model"] = _fill_unused_esm_position_embeddings(
+            checkpoint["model"], current
+        )
 
         filtered = OrderedDict()
         for k, v in checkpoint["model"].items():
