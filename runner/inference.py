@@ -16,6 +16,7 @@
 import copy
 import logging
 import os
+import re
 import traceback
 from collections import OrderedDict
 from collections.abc import Mapping
@@ -49,6 +50,69 @@ OmegaConf.register_new_resolver("gt", lambda a, b: a > b)
 rootutils.setup_root(__file__, indicator=".project-root")
 
 logger = logging.getLogger(__name__)
+
+
+# Matches per-layer ESM/DPLM rotary inv_freq keys from old checkpoints, e.g.
+# "lm_module.lm_model.model.esm.encoder.layer.23.attention.self.rotary_embeddings.inv_freq".
+_ESM_PER_LAYER_INV_FREQ_RE = re.compile(
+    r"^(?P<prefix>.+\.)encoder\.layer\.(?P<layer>\d+)"
+    r"\.attention\.self\.rotary_embeddings\.inv_freq$"
+)
+
+
+def _remap_esm_rotary_inv_freq(
+    checkpoint_state: Mapping[str, torch.Tensor],
+    current_state: Mapping[str, torch.Tensor],
+) -> "OrderedDict[str, torch.Tensor]":
+    """Promotes per-layer ESM rotary inv_freq buffers to the shared key.
+
+    Newer transformers releases (the EsmModel rewrite introduced around
+    transformers 5.x) store a single shared rotary inv_freq buffer at
+    ``<prefix>rotary_embeddings.inv_freq`` instead of one per attention
+    layer. Old DISCO checkpoints carry the per-layer copies, which are
+    identical across layers, so the first one can safely be promoted.
+
+    The remap is only applied when the current model actually expects the
+    new shared key, which makes the fix a no-op on older transformers
+    versions where the per-layer buffers still exist.
+    """
+    remapped: OrderedDict[str, torch.Tensor] = OrderedDict(checkpoint_state)
+
+    grouped: dict[str, list[tuple[int, str]]] = {}
+    for key in checkpoint_state:
+        match = _ESM_PER_LAYER_INV_FREQ_RE.match(key)
+        if match:
+            grouped.setdefault(match.group("prefix"), []).append(
+                (int(match.group("layer")), key)
+            )
+
+    for prefix, layer_keys in grouped.items():
+        new_key = f"{prefix}rotary_embeddings.inv_freq"
+        if new_key not in current_state:
+            # Current model still uses the per-layer layout; leave untouched.
+            continue
+        if new_key in remapped:
+            continue
+
+        layer_keys.sort(key=lambda lk: lk[0])
+        _, first_layer_key = layer_keys[0]
+
+        first_inv_freq = checkpoint_state[first_layer_key]
+        for _, other_key in layer_keys[1:]:
+            other_inv_freq = checkpoint_state[other_key]
+            assert other_inv_freq.shape == first_inv_freq.shape and torch.equal(
+                other_inv_freq, first_inv_freq
+            ), (
+                f"Rotary inv_freq mismatch under prefix '{prefix}': "
+                f"'{other_key}' differs from '{first_layer_key}'; cannot safely "
+                "promote to a single shared buffer."
+            )
+
+        remapped[new_key] = first_inv_freq
+        for _, key in layer_keys:
+            remapped.pop(key, None)
+
+    return remapped
 
 
 def seq_tnsr_to_str(pred_tnsr: torch.Tensor) -> str:
@@ -189,8 +253,9 @@ class InferenceRunner:
             }
 
         current = self.model.state_dict()
-        filtered = OrderedDict()
+        checkpoint["model"] = _remap_esm_rotary_inv_freq(checkpoint["model"], current)
 
+        filtered = OrderedDict()
         for k, v in checkpoint["model"].items():
             if k in current and v.shape == current[k].shape:
                 filtered[k] = v  # → OK: same name & same shape
