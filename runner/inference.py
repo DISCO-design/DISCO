@@ -71,14 +71,14 @@ _ESM_PER_LAYER_INV_FREQ_RE = re.compile(
 # Matches ESM embedding position_embeddings keys, e.g.
 # "lm_module.lm_model.model.esm.embeddings.position_embeddings.weight".
 _ESM_POSITION_EMBEDDINGS_RE = re.compile(
-    r"^.+\.embeddings\.position_embeddings\.weight$"
+    r"^.+\.esm\.embeddings\.position_embeddings\.weight$"
 )
 
 
 def _remap_esm_rotary_inv_freq(
     checkpoint_state: Mapping[str, torch.Tensor],
     current_state: Mapping[str, torch.Tensor],
-) -> "OrderedDict[str, torch.Tensor]":
+) -> OrderedDict[str, torch.Tensor]:
     """Promotes per-layer ESM rotary inv_freq buffers to the shared key.
 
     Newer transformers releases (the EsmModel rewrite introduced around
@@ -115,13 +115,14 @@ def _remap_esm_rotary_inv_freq(
         first_inv_freq = checkpoint_state[first_layer_key]
         for _, other_key in layer_keys[1:]:
             other_inv_freq = checkpoint_state[other_key]
-            assert other_inv_freq.shape == first_inv_freq.shape and torch.equal(
+            if other_inv_freq.shape != first_inv_freq.shape or not torch.equal(
                 other_inv_freq, first_inv_freq
-            ), (
-                f"Rotary inv_freq mismatch under prefix '{prefix}': "
-                f"'{other_key}' differs from '{first_layer_key}'; cannot safely "
-                "promote to a single shared buffer."
-            )
+            ):
+                raise RuntimeError(
+                    f"Rotary inv_freq mismatch under prefix '{prefix}': "
+                    f"'{other_key}' differs from '{first_layer_key}'; cannot safely "
+                    "promote to a single shared buffer."
+                )
 
         remapped[new_key] = first_inv_freq
         for _, key in layer_keys:
@@ -133,10 +134,10 @@ def _remap_esm_rotary_inv_freq(
 def _fill_unused_esm_position_embeddings(
     checkpoint_state: Mapping[str, torch.Tensor],
     current_state: Mapping[str, torch.Tensor],
-) -> "OrderedDict[str, torch.Tensor]":
+) -> OrderedDict[str, torch.Tensor]:
     """Fills missing ESM ``position_embeddings.weight`` keys from current state.
 
-    On older transformers versions like 4.50.0 ,
+    On older transformers versions like 4.50.0,
     ``EsmEmbeddings.position_embeddings`` is unconditionally
     instantiated as an ``nn.Embedding``, despite the weight being unused when
     the model is configured with ``position_embedding_type="rotary"``. The
@@ -156,7 +157,17 @@ def _fill_unused_esm_position_embeddings(
             continue
         if key in remapped:
             continue
-        remapped[key] = tensor.detach().clone()
+        # The fill assumes position_embedding_type="rotary", in which case the
+        # weight is unused at inference. Warn so that a future operator running
+        # this against an absolute-position ESM model notices the silent fill.
+        logger.warning(
+            "Filling missing ESM position embedding '%s' from the freshly "
+            "initialized model weights. This is only safe when the ESM module "
+            "is configured with position_embedding_type='rotary'; an absolute "
+            "configuration would receive random init values.",
+            key,
+        )
+        remapped[key] = tensor.clone()
 
     return remapped
 
@@ -217,7 +228,6 @@ class InferenceRunner:
         self.fabric.launch()
         self.device = self.fabric.device
         torch.cuda.set_device(self.device)
-        #os.environ["TORCH_CUDA_ARCH_LIST"] = "8.0 8.9"
         if self.configs.use_deepspeed_evo_attention:
             env = os.getenv("CUTLASS_PATH", None)
             self.print(f"env: {env}")
