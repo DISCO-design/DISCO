@@ -171,7 +171,7 @@ class InferenceRunner:
         self.fabric.launch()
         self.device = self.fabric.device
         torch.cuda.set_device(self.device)
-        os.environ["TORCH_CUDA_ARCH_LIST"] = "8.0,8.9"
+        #os.environ["TORCH_CUDA_ARCH_LIST"] = "8.0 8.9"
         if self.configs.use_deepspeed_evo_attention:
             env = os.getenv("CUTLASS_PATH", None)
             self.print(f"env: {env}")
