@@ -1,3 +1,5 @@
 # @package _global_
 fabric:
   num_nodes: 1
+  accelerator: auto
+  strategy: ddp

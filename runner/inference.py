@@ -17,6 +17,7 @@ import copy
 import logging
 import os
 import re
+import time
 import traceback
 import warnings
 
@@ -34,6 +35,13 @@ import torch
 from disco.data.constants import MASK_TOKEN_IDX, PRO_RES_IDX_TO_RESNAME_ONE
 from disco.data.infer_data_pipeline import get_inference_dataloader
 from disco.data.json_to_feature import SampleDictToFeatures
+from disco.model.cogen_inference.guidance import (
+    write_coordinate_trajectory_outputs,
+    write_diagnostic_outputs,
+)
+from disco.model.cogen_inference.guidance.artifact_provenance import (
+    write_artifact_provenance,
+)
 from disco.model.disco import DISCO
 
 # eval model
@@ -214,8 +222,15 @@ class InferenceRunner:
         the distributed processes, and configures optional kernel compilation
         flags (DeepSpeed EvoformerAttention, fast LayerNorm).
         """
+        strategy_name = self.configs.fabric.get("strategy", "ddp")
+        strategy = (
+            DDPStrategy(find_unused_parameters=False)
+            if strategy_name == "ddp"
+            else strategy_name
+        )
         self.fabric = Fabric(
-            strategy=DDPStrategy(find_unused_parameters=False),
+            accelerator=self.configs.fabric.get("accelerator", "auto"),
+            strategy=strategy,
             num_nodes=self.configs.fabric.num_nodes,
             loggers=[
                 hydra.utils.instantiate(logger)
@@ -227,7 +242,8 @@ class InferenceRunner:
         )
         self.fabric.launch()
         self.device = self.fabric.device
-        torch.cuda.set_device(self.device)
+        if self.device.type == "cuda":
+            torch.cuda.set_device(self.device)
         if self.configs.use_deepspeed_evo_attention:
             env = os.getenv("CUTLASS_PATH", None)
             self.print(f"env: {env}")
@@ -467,7 +483,9 @@ def main(configs: DictConfig):
                 f"N_atom {data['N_atom'].item()}"
             )
 
+            predict_start = time.perf_counter()
             prediction = runner.predict(data, sample2feat)
+            predict_runtime_seconds = time.perf_counter() - predict_start
 
             file_format = "cif"
             output_format = configs.get("output_format", None)
@@ -482,6 +500,7 @@ def main(configs: DictConfig):
                 )
 
             structure_path = None
+            confidence_paths = []
             if output_format is None:
                 structure_path = runner.dumper.dump(
                     dataset_name="",
@@ -508,6 +527,12 @@ def main(configs: DictConfig):
                 raise ValueError(f"Unknown output format: {output_format}")
 
             pdb_id = path.name.split(".")[0]
+            if "summary_confidence" in to_log_pred_dict:
+                confidence_paths = runner.dumper._save_confidence(
+                    data=to_log_pred_dict,
+                    prediction_save_dir=pdbs_dir,
+                    sample_name=pdb_id,
+                )
 
             # NOTE: we assume batchsize=1 and assuming lig["ligand"] is not CCD code but SMILES
             # Extract any SMILES
@@ -531,6 +556,44 @@ def main(configs: DictConfig):
                     os.fsync(f)
 
             this_dict = {"pdb_id": pdb_id, "model_pdb_path": str(structure_path)}
+            diagnostic_records = prediction.get("diagnostic_records", [])
+            if diagnostic_records:
+                this_dict.update(
+                    write_diagnostic_outputs(
+                        diagnostics_dir=dump_dir / "diagnostics",
+                        sample_id=pdb_id,
+                        records=diagnostic_records,
+                        runtime_seconds=predict_runtime_seconds,
+                        sample_name=sample_name,
+                        seed=curr_seed,
+                    )
+                )
+            trajectory_manifest_path = None
+            trajectory_cfg = configs.get("cogen_guidance", {}).get(
+                "trajectory_dump",
+                {},
+            )
+            if trajectory_cfg.get("enabled", False):
+                max_steps = int(trajectory_cfg.get("max_steps", 0) or 0)
+                this_dict.update(
+                    write_coordinate_trajectory_outputs(
+                        trajectory_dir=dump_dir / "trajectories",
+                        sample_id=pdb_id,
+                        prediction=prediction,
+                        save_x1_denoised=bool(
+                            trajectory_cfg.get("save_x1_denoised", True)
+                        ),
+                        save_xt_trajectory=bool(
+                            trajectory_cfg.get("save_xt_trajectory", True)
+                        ),
+                        save_final_coordinate=bool(
+                            trajectory_cfg.get("save_final_coordinate", False)
+                        ),
+                        dtype_name=str(trajectory_cfg.get("dtype", "float32")),
+                        max_steps=max_steps if max_steps > 0 else None,
+                    )
+                )
+                trajectory_manifest_path = this_dict.get("trajectory_manifest")
 
             ftr_dict = data["input_feature_dict"]
             decoder_pred = prediction.get("decoder_prediction")
@@ -575,6 +638,21 @@ def main(configs: DictConfig):
                     aa_seqs[0] if len(aa_seqs) == 1 else aa_seqs
                 )
                 this_dict["ligands"] = ligand_smiles
+                this_dict.update(
+                    write_artifact_provenance(
+                        provenance_dir=dump_dir / "provenance",
+                        sample_id=pdb_id,
+                        sample_name=sample_name,
+                        seed=curr_seed,
+                        structure_path=structure_path,
+                        sequence_path=seq_path,
+                        confidence_paths=confidence_paths,
+                        diagnostics_manifest=this_dict.get("diagnostics_manifest"),
+                        diagnostic_records=diagnostic_records,
+                        trajectory_manifest=trajectory_manifest_path,
+                        run_command=" ".join(os.sys.argv),
+                    )
+                )
 
             pre_log_dicts.append(this_dict)
 

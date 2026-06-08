@@ -252,7 +252,7 @@ class DataDumper:
         prediction_save_dir: str,
         sample_name: str,
         sorted_by_ranking_score: bool = True,
-    ):
+    ) -> list[str]:
         """Saves confidence scores and full confidence data to JSON files.
 
         Writes per-sample summary confidence JSON files, optionally sorted
@@ -281,15 +281,19 @@ class DataDumper:
                 reverse=True,
             )
 
+        output_fpaths = []
         for rank, idx in enumerate(sorted_indices):
             output_fpath = os.path.join(
                 prediction_save_dir,
                 f"{sample_name}_summary_confidence_sample_{idx}.json",
             )
             save_json(data["summary_confidence"][idx], output_fpath, indent=4)
+            output_fpaths.append(output_fpath)
             if self.need_atom_confidence:
                 output_fpath = os.path.join(
                     prediction_save_dir,
                     f"{sample_name}_full_data_sample_{idx}.json",
                 )
                 save_json(data["full_data"][idx], output_fpath, indent=None)
+                output_fpaths.append(output_fpath)
+        return output_fpaths
