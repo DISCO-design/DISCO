@@ -143,6 +143,34 @@ class BasicInferenceLoopStrategy(BaseInferenceLoopStrategy):
                 can_change_idx,
             )
 
+        guidance_controller = self.inner_loop_executor.guidance_controller
+        if (
+            guidance_controller is not None
+            and guidance_controller.select_best_output
+        ):
+            best_output = guidance_controller.select_best_outputs(
+                xt_seq=xt_seq,
+                structure=x_l,
+            )
+            if best_output is not None:
+                best_seq, best_structure, best_details = best_output
+                changed = best_seq != xt_seq
+                if changed.any():
+                    updater = self.inner_loop_executor.ftr_dict_updater
+                    input_feature_dict = updater.update(
+                        input_feature_dict,
+                        self.inner_loop_executor.sample2feat,
+                        best_seq,
+                        changed,
+                        self.inner_loop_executor.bb_only,
+                        self.inner_loop_executor.random_transform_ref_pos,
+                        self.inner_loop_executor.random_transform_msk_res,
+                        self.inner_loop_executor.ref_pos_augment,
+                    )
+                xt_seq = best_seq
+                x_l = best_structure
+                self.inner_loop_executor.diagnostic_records.append(best_details)
+
         return (
             x_l,
             xt_seq,

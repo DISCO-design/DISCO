@@ -355,8 +355,9 @@ class DISCO(nn.Module):
             "token_index": 1,
             "token_bonds": 1,
         }
+        target_device = next(self.parameters()).device
         for key, __ in input_feature.items():
-            input_feature_dict[key] = input_feature_dict[key].to("cuda")
+            input_feature_dict[key] = input_feature_dict[key].to(target_device)
 
         N_token = input_feature_dict["residue_index"].shape[-1]
         if N_token <= 16:
@@ -369,7 +370,7 @@ class DISCO(nn.Module):
         s_inputs = self.input_embedder(
             input_feature_dict, inplace_safe=False, chunk_size=chunk_size
         )  # [..., N_token, 451]
-        input_feature_dict["token_bonds"] = input_feature_dict["token_bonds"].to("cuda")
+        input_feature_dict["token_bonds"] = input_feature_dict["token_bonds"].to(target_device)
         s_init = self.linear_no_bias_sinit(s_inputs)  # [..., N_token, c_s]
         z_init = (
             self.linear_no_bias_zinit1(s_init)[..., None, :]
@@ -797,6 +798,7 @@ class DISCO(nn.Module):
         _configs["noisy_guidance"] = self.configs.sample_diffusion.get(
             "noisy_guidance", None
         )
+        _configs["cogen_guidance"] = self.configs.get("cogen_guidance", None)
         _configs.update(
             {
                 "attn_chunk_size": (
@@ -891,6 +893,7 @@ class DISCO(nn.Module):
             "decoder_prediction": _cat(pred_dicts, "decoder_prediction"),
             "resolved": _cat(pred_dicts, "resolved"),
             "atom_array": _cat(pred_dicts, "atom_array"),
+            "diagnostic_records": _list_join(pred_dicts, "diagnostic_records"),
         }
 
         all_pred_dict = {
@@ -950,7 +953,7 @@ class DISCO(nn.Module):
         N_atom = atom_to_token_idx.shape[-1]
         batch_size = 1 if atom_to_token_idx.ndim == 1 else atom_to_token_idx.shape[0]
 
-        device = "cuda"
+        device = atom_to_token_idx.device
         noise_schedule = self.inference_noise_scheduler(N_step=N_step, device=device)
 
         (

@@ -69,6 +69,7 @@ def sample_diffusion_cogen(
     integrator: str = "euler",
     gamma_anneal: str = "none",
     noisy_guidance: DictConfig | None = None,
+    cogen_guidance: DictConfig | None = None,
 ) -> tuple[torch.Tensor, torch.Tensor, AtomArray]:
     """Implements Algorithm 18 in AF3.
     It performs denoising steps from time 0 to time T.
@@ -195,6 +196,7 @@ def sample_diffusion_cogen(
             integrator=integrator,
             gamma_anneal=gamma_anneal,
             noisy_guidance=noisy_guidance,
+            cogen_guidance=cogen_guidance,
         )
 
         inf_loop_strat = InferenceLoopStrategyFactory.create_loop_strategy(

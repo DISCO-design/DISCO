@@ -1,0 +1,126 @@
+enabled: false
+
+# Comma-separated motifs or a YAML list. When null, the historical
+# ProteinGenerator motif list is used for compatibility experiments.
+motifs: null
+motif_weights: null
+
+logit_guidance:
+  enabled: false
+  gradient_enabled: true
+  gradient_scale: 1.0
+  motif_weight_all: 0.5
+  motif_weight_many: 0.5
+  motif_top_k: 3
+  motif_temperature: 0.5
+  local_rescue_enabled: false
+  local_rescue_bonus: 1.0
+  local_rescue_top_k: 3
+  local_rescue_min_probability: 0.03
+  local_rescue_max_motifs_per_step: 4
+  local_rescue_max_changes_per_step: 8
+  local_rescue_only_missing: true
+  hard_commit_enabled: false
+  hard_commit_spread: true
+  hard_commit_position_offset: 0
+  hard_commit_all_motifs: false
+  hard_commit_max_motifs_per_step: 4
+  hard_commit_max_changes_per_step: 16
+
+scoring:
+  motif_all_weight: 0.8
+  motif_many_weight: 0.2
+  motif_many_cap: 0
+
+save_best:
+  enabled: false
+  select_best_output: false
+  motif_score_weight: 1.0
+  confidence_weight: 0.0
+
+# Optional full coordinate trajectory tensor persistence. This is disabled by
+# default because the tensors can be large. Lightweight JSONL/CSV diagnostics are
+# written separately when guidance produces diagnostic records.
+trajectory_dump:
+  enabled: false
+  save_x1_denoised: true
+  save_xt_trajectory: true
+  save_final_coordinate: false
+  dtype: float32
+  max_steps: 0
+
+alternating:
+  enabled: false
+  motif_list1: null
+  motif_list2: null
+  expected_start_group: list1
+  combined_weight: 0.0
+
+  # Slot-based soft guidance adapted from ProteinGenerator's
+  # AlternatingMotifsBias. These values affect logits before DISCO's existing
+  # path-planning sampler runs; they are separate from the hard scoring weights
+  # below.
+  logit_guidance_enabled: false
+  logit_gradient_scale: 1.0
+  logit_temperature: 0.5
+  logit_max_slots: 0
+  logit_slot_gap: 3.0
+  logit_slot_width: 1.35
+  logit_tail_weight: 0.25
+  logit_coverage_weight: 0.35
+  logit_transition_weight: 0.40
+
+  # Slot-free comparison guidance adapted from ProteinGenerator's
+  # soft_transition_alternating_motifs_bias. Enable this instead of the slot
+  # guidance above to test transition-only pressure.
+  transition_logit_guidance_enabled: false
+  transition_logit_gradient_scale: 1.0
+  transition_logit_temperature: 0.5
+  transition_logit_tail_weight: 0.25
+  transition_logit_coverage_weight: 0.35
+  transition_logit_transition_weight: 0.40
+  transition_same_group_penalty_weight: 0.25
+  transition_soft_start_weight: 0.20
+  transition_soft_end_weight: 0.20
+  transition_distance_temperature: 8.0
+  transition_min_separation: 1
+
+  # Hard scoring weights used for diagnostics and save-best ranking.
+  alternation_weight: 0.45
+  balance_weight: 0.20
+  coverage_weight: 0.20
+  terminal_weight: 0.15
+  start_weight: 0.15
+
+immunogen:
+  enabled: false
+  motifs: null
+  motif_weights: null
+  fixed_fragments: []
+  combined_weight: 0.0
+  protect_fixed_fragments: true
+
+  # PG immunogen_mutable_motifs_bias equivalent. Motif windows are scored only
+  # when every residue in the window is mutable, so guidance pressure stays away
+  # from protected B-cell/immunogen fragments.
+  mutable_logit_guidance:
+    enabled: false
+    gradient_enabled: true
+    gradient_scale: 1.0
+    motif_weight_all: 0.5
+    motif_weight_many: 0.5
+    motif_top_k: 3
+    motif_temperature: 0.5
+    local_rescue_enabled: false
+    local_rescue_bonus: 1.0
+    local_rescue_top_k: 3
+    local_rescue_min_probability: 0.03
+    local_rescue_max_motifs_per_step: 4
+    local_rescue_max_changes_per_step: 8
+    local_rescue_only_missing: true
+    coverage_guided: false
+
+  # Optional PG immunogen spacing-aware save-score tie-breaker.
+  spacing_aware: false
+  spacing_weight: 0.05
+  spacing_target_distance: 0.0

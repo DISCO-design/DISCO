@@ -28,6 +28,7 @@ from disco.model.cogen_inference.sequence_sampling_strategy import (
     BaseSequenceSamplingStrategy,
     get_seq_t,
 )
+from disco.model.cogen_inference.guidance import build_guidance_controller
 from disco.model.utils import centre_random_augmentation, InferenceNoiseScheduler
 
 logger = logging.getLogger(__name__)
@@ -246,6 +247,7 @@ class InferenceLoopImpl:
         integrator: str = "euler",
         gamma_anneal: str = "none",
         noisy_guidance: DictConfig | None = None,
+        cogen_guidance: DictConfig | None = None,
     ):
         self.model = model
         self.sequence_sampling_strategy = sequence_sampling_strategy
@@ -277,6 +279,7 @@ class InferenceLoopImpl:
         self.seq_backbone_noise_sigma_min = seq_backbone_noise_sigma_min
         self.seq_backbone_noise_anneal = seq_backbone_noise_anneal
         self.seq_backbone_noise_start_t = seq_backbone_noise_start_t
+        self.guidance_controller = build_guidance_controller(cogen_guidance)
 
         assert integrator in ("euler", "heun"), f"Unknown integrator: {integrator}"
         self.integrator = integrator
@@ -781,6 +784,8 @@ class InferenceLoopImpl:
     ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
         if self.is_inverse_folding:
             x_l = self.inverse_folding_struct
+        if self.guidance_controller is not None:
+            can_change_idx = self.guidance_controller.modify_change_mask(can_change_idx)
 
         # [..., N_sample, N_atom, 3]
         x_l = (
@@ -1078,6 +1083,16 @@ class InferenceLoopImpl:
             **seq_logit_inf_input
         )
 
+        if self.guidance_controller is not None:
+            seq_decoder_logits = self.guidance_controller.modify_logits(
+                logits=seq_decoder_logits,
+                xt_seq=xt_seq,
+                can_change_idx=can_change_idx,
+                step=i,
+                x_denoised=x_denoised,
+                x_l=x_l,
+            )
+
         xt_seq_new = self.sequence_sampling_strategy.step(
             seq_decoder_logits,
             x_l,
@@ -1092,6 +1107,11 @@ class InferenceLoopImpl:
 
         if freeze_seq:
             xt_seq_new = xt_seq
+        elif self.guidance_controller is not None:
+            xt_seq_new = self.guidance_controller.modify_sampled_sequence(
+                xt_seq=xt_seq_new,
+                can_change_idx=can_change_idx,
+            )
 
         xt_seq_changed_idx = xt_seq_new != xt_seq
         xt_seq_changed = xt_seq_changed_idx.any()
@@ -1134,6 +1154,16 @@ class InferenceLoopImpl:
             step_diag["noisy_guidance_omega_seq"] = self.omega_seq
         if hasattr(self.sequence_sampling_strategy, "last_step_diagnostics"):
             step_diag.update(self.sequence_sampling_strategy.last_step_diagnostics)
+        if self.guidance_controller is not None:
+            step_diag.update(
+                self.guidance_controller.observe_step(
+                    xt_seq=xt_seq,
+                    structure=x_l,
+                    logits=seq_decoder_logits,
+                    can_change_idx=can_change_idx,
+                    step=i,
+                )
+            )
         self.diagnostic_records.append(step_diag)
 
         return x_l, xt_seq, input_feature_dict, xt_seq_changed

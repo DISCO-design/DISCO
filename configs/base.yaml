@@ -10,6 +10,7 @@ defaults:
   - inference: default
   - structure_encoder: default
   - sequence_sampling_strategy: default
+  - cogen_guidance: default
   - experiment: null
   - effort: max
   - _self_
