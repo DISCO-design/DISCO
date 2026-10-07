@@ -5,6 +5,6 @@ args:
   arg_pack_side_chains: False
   set_eval: False
   k_neighbors: 48
-  device: "cuda"
+  device: "cuda" # will be overridden by InferenceRunner.init_model with the active device
   batch_size: 4
   embed_diffusion_time: false

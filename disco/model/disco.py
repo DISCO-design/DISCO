@@ -33,6 +33,7 @@ from disco.model.utils import (
     simple_merge_dict_list,
     stochastic_sample_from_categorical,
 )
+from disco.utils.device import empty_cache
 from disco.utils.geometry import DistOneHotCalculator
 from disco.utils.logger import get_logger
 from disco.utils.torch_utils import autocasting_disable_decorator
@@ -355,8 +356,9 @@ class DISCO(nn.Module):
             "token_index": 1,
             "token_bonds": 1,
         }
+        model_device = next(self.parameters()).device
         for key, __ in input_feature.items():
-            input_feature_dict[key] = input_feature_dict[key].to("cuda")
+            input_feature_dict[key] = input_feature_dict[key].to(model_device)
 
         N_token = input_feature_dict["residue_index"].shape[-1]
         if N_token <= 16:
@@ -369,7 +371,9 @@ class DISCO(nn.Module):
         s_inputs = self.input_embedder(
             input_feature_dict, inplace_safe=False, chunk_size=chunk_size
         )  # [..., N_token, 451]
-        input_feature_dict["token_bonds"] = input_feature_dict["token_bonds"].to("cuda")
+        input_feature_dict["token_bonds"] = input_feature_dict["token_bonds"].to(
+            model_device
+        )
         s_init = self.linear_no_bias_sinit(s_inputs)  # [..., N_token, c_s]
         z_init = (
             self.linear_no_bias_zinit1(s_init)[..., None, :]
@@ -950,7 +954,7 @@ class DISCO(nn.Module):
         N_atom = atom_to_token_idx.shape[-1]
         batch_size = 1 if atom_to_token_idx.ndim == 1 else atom_to_token_idx.shape[0]
 
-        device = "cuda"
+        device = atom_to_token_idx.device
         noise_schedule = self.inference_noise_scheduler(N_step=N_step, device=device)
 
         (
@@ -985,7 +989,7 @@ class DISCO(nn.Module):
         step_diffusion = time.time()
         time_tracker.update({"diffusion": step_diffusion - step_st})
         if N_token > 2000:
-            torch.cuda.empty_cache()
+            empty_cache()
 
         pred_dict["token_array"] = input_feature_dict["token_array"]
         return pred_dict, log_dict, time_tracker

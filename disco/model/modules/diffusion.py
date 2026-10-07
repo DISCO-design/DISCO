@@ -29,6 +29,7 @@ from disco.model.modules.transformer import (
     DiffusionTransformer,
 )
 from disco.model.utils import expand_at_dim
+from disco.utils.device import empty_cache
 
 
 class DiffusionConditioning(nn.Module):
@@ -209,7 +210,7 @@ class DiffusionConditioning(nn.Module):
             single_s = single_s + self.transition_s1(single_s)
             single_s = single_s + self.transition_s2(single_s)
         if not self.training and pair_z.shape[-2] > 2000:
-            torch.cuda.empty_cache()
+            empty_cache()
         return single_s, pair_z
 
 

@@ -35,6 +35,7 @@ from disco.model.utils import (
     broadcast_token_to_atom,
     permute_final_dims,
 )
+from disco.utils.device import empty_cache
 
 
 class AttentionPairBias(nn.Module):
@@ -356,7 +357,7 @@ class DiffusionTransformer(nn.Module):
         ]
 
         def clear_cache(b, *args, **kwargs):
-            torch.cuda.empty_cache()
+            empty_cache()
             return b(*args, **kwargs)
 
         if clear_cache_between_blocks:
@@ -866,7 +867,7 @@ class AtomAttentionEncoder(nn.Module):
             reduce="mean",
         )  # [..., (N_sample), N_token, c_token]
         if (not self.training) and (a.shape[-2] > 2000 or q_l.shape[-2] > 20000):
-            torch.cuda.empty_cache()
+            empty_cache()
         return a, q_l, c_l, p_lm
 
 

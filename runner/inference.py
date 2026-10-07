@@ -22,7 +22,6 @@ import warnings
 
 from collections import OrderedDict
 from collections.abc import Mapping
-from contextlib import nullcontext
 from os.path import exists as opexists, join as opjoin
 from pathlib import Path
 from typing import Any
@@ -37,11 +36,12 @@ from disco.data.json_to_feature import SampleDictToFeatures
 from disco.model.disco import DISCO
 
 # eval model
+from disco.utils.device import empty_cache, XPUAccelerator
 from disco.utils.seed import seed_everything
 from disco.utils.torch_utils import to_device
 from huggingface_hub import hf_hub_download
 from lightning import Fabric
-from lightning.fabric.strategies import DDPStrategy
+from lightning.fabric.strategies import DDPStrategy, SingleDeviceStrategy
 from omegaconf import DictConfig, OmegaConf
 
 from runner.dumper import DataDumper
@@ -208,26 +208,52 @@ class InferenceRunner:
         self.init_dumper(need_atom_confidence=configs.need_atom_confidence)
 
     def init_env(self) -> None:
-        """Initializes the distributed environment and CUDA settings.
+        """Initializes the distributed environment and CUDA/XPU settings.
 
-        Creates a Lightning Fabric instance with DDP strategy, launches
-        the distributed processes, and configures optional kernel compilation
+        Creates a Lightning Fabric instance (DDP on CUDA, or a single Intel
+        XPU device when ``fabric.accelerator=xpu``), launches the
+        distributed processes, and configures optional kernel compilation
         flags (DeepSpeed EvoformerAttention, fast LayerNorm).
         """
-        self.fabric = Fabric(
-            strategy=DDPStrategy(find_unused_parameters=False),
-            num_nodes=self.configs.fabric.num_nodes,
-            loggers=[
-                hydra.utils.instantiate(logger)
-                for _, logger in self.configs.logger.items()
-            ],
-        )
+        loggers = [
+            hydra.utils.instantiate(logger) for _, logger in self.configs.logger.items()
+        ]
+        accelerator = self.configs.fabric.get("accelerator", "cuda")
+        if accelerator == "xpu":
+            if self.configs.fabric.num_nodes != 1:
+                raise ValueError("XPU inference only supports a single node.")
+            if self.configs.fabric.get("devices", 1) != 1:
+                raise ValueError("XPU inference only supports a single device.")
+            if not XPUAccelerator.is_available():
+                raise RuntimeError(
+                    "fabric.accelerator=xpu but no XPU device is available."
+                )
+            if self.configs.use_deepspeed_evo_attention:
+                raise ValueError(
+                    "DS4Sci_EvoformerAttention has no XPU kernel; the xpu "
+                    "fabric preset sets use_deepspeed_evo_attention=false."
+                )
+            self.fabric = Fabric(
+                strategy=SingleDeviceStrategy(
+                    device="xpu:0", accelerator=XPUAccelerator()
+                ),
+                devices=1,
+                num_nodes=1,
+                loggers=loggers,
+            )
+        else:
+            self.fabric = Fabric(
+                strategy=DDPStrategy(find_unused_parameters=False),
+                num_nodes=self.configs.fabric.num_nodes,
+                loggers=loggers,
+            )
         self.print(
             f"Fabric: {self.fabric}, rank: {self.fabric.global_rank}, world_size: {self.fabric.world_size}"
         )
         self.fabric.launch()
         self.device = self.fabric.device
-        torch.cuda.set_device(self.device)
+        if self.device.type == "cuda":
+            torch.cuda.set_device(self.device)
         if self.configs.use_deepspeed_evo_attention:
             env = os.getenv("CUTLASS_PATH", None)
             self.print(f"env: {env}")
@@ -240,6 +266,11 @@ class InferenceRunner:
                 )
         use_fastlayernorm = os.getenv("LAYERNORM_TYPE", None)
         if use_fastlayernorm == "fast_layernorm":
+            if self.device.type != "cuda":
+                raise RuntimeError(
+                    "fast_layernorm is a CUDA-only kernel; unset the "
+                    "LAYERNORM_TYPE environment variable for XPU."
+                )
             logging.info(
                 "The kernels will be compiled when fast_layernorm is called for the first time."
             )
@@ -262,7 +293,7 @@ class InferenceRunner:
         structure_encoder = None
         if self.configs.structure_encoder.use_structure_encoder:
             structure_encoder = hydra.utils.instantiate(
-                self.configs.structure_encoder.args
+                self.configs.structure_encoder.args, device=self.device
             )
 
         sequence_sampling_strategy = hydra.utils.instantiate(
@@ -370,11 +401,7 @@ class InferenceRunner:
             "fp16": torch.float16,
         }[self.configs.dtype]
 
-        enable_amp = (
-            torch.autocast(device_type="cuda", dtype=eval_precision)
-            if torch.cuda.is_available()
-            else nullcontext()
-        )
+        enable_amp = torch.autocast(device_type=self.device.type, dtype=eval_precision)
 
         data = to_device(data, self.device)
         with enable_amp:
@@ -596,8 +623,7 @@ def main(configs: DictConfig):
                 os.remove(error_path)
             with open(error_path, "w") as f:
                 f.write(error_message)
-            if hasattr(torch.cuda, "empty_cache"):
-                torch.cuda.empty_cache()
+            empty_cache()
 
 
 if __name__ == "__main__":

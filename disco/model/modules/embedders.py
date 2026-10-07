@@ -22,6 +22,7 @@ import torch.nn.functional as F
 from disco.data.constants import STD_RESIDUES
 from disco.model.modules.primitives import LinearNoBias
 from disco.model.modules.transformer import AtomAttentionEncoder
+from disco.utils.device import empty_cache
 
 
 class InputFeatureEmbedder(nn.Module):
@@ -92,7 +93,7 @@ class InputFeatureEmbedder(nn.Module):
         )
 
         if not self.training and a.shape[-2] > 2000:
-            torch.cuda.empty_cache()
+            empty_cache()
         return s_inputs
 
 
@@ -248,7 +249,7 @@ class RelativePositionEncoding(nn.Module):
             del a_rel_pos, a_rel_token, b_same_entity, a_rel_chain
             p = p.reshape(*origin_shape, -1)
             if p.shape[-2] > 2000:
-                torch.cuda.empty_cache()
+                empty_cache()
             return p
 
 

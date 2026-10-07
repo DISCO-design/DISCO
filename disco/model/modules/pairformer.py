@@ -29,6 +29,7 @@ from openfold.utils.checkpointing import checkpoint_blocks
 
 from disco.model.modules.primitives import Transition
 from disco.model.modules.transformer import AttentionPairBias
+from disco.utils.device import empty_cache
 
 logger = logging.getLogger(__name__)
 
@@ -261,7 +262,7 @@ class PairformerStack(nn.Module):
         ]
 
         def clear_cache(b, *args, **kwargs):
-            torch.cuda.empty_cache()
+            empty_cache()
             return b(*args, **kwargs)
 
         if clear_cache_between_blocks:

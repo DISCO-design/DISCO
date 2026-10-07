@@ -18,6 +18,8 @@ from contextlib import nullcontext
 import numpy as np
 import torch
 
+from disco.utils.device import autocast_disabled
+
 
 def to_device(obj, device):
     """Moves a tensor or nested dict of tensors to the specified device recursively.
@@ -130,11 +132,7 @@ def autocasting_disable_decorator(disable_casting: bool):
 
     def func_wrapper(func):
         def new_func(*args, **kwargs):
-            _amp_context = (
-                torch.autocast(device_type="cuda", enabled=False)
-                if disable_casting
-                else nullcontext()
-            )
+            _amp_context = autocast_disabled() if disable_casting else nullcontext()
             dtype = torch.float32 if disable_casting else None
             with _amp_context:
                 return func(
